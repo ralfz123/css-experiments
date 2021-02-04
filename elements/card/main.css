@@ -1,0 +1,96 @@
+/* source: https://github.com/lars-ruijs/css-to-the-rescue-2021/blob/master/kickoff/styles.css */
+body {
+  background-color: cornsilk;
+}
+.card {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.card div {
+  width: 500px;
+  border-radius: 18px;
+  color: white;
+}
+
+.card div section {
+  text-align: center;
+  position: relative;
+  padding: 20em 5em;
+  background: black;
+  transition: transform 3s;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+}
+
+.card div:hover section {
+  transform: rotateY(0.5turn);
+}
+
+.card div section article {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5em 3em;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.card div section article:nth-of-type(1) {
+  border-radius: 20px;
+}
+
+.card div section article:nth-of-type(2) {
+  border-radius: 20px;
+  transform: rotateY(0.5turn);
+  background: var(--backgroundGradientDark);
+  transform-style: preserve-3d;
+}
+
+.card div section article img {
+  width: 100%;
+  transform: translateZ(3em);
+}
+
+.card div section article p {
+  transform: translateZ(3em);
+}
+
+.card div section article:nth-child(1) h1,
+article:nth-child(1) h2,
+article:nth-child(1) p,
+article:nth-child(1) img {
+  transform: translateZ(3em);
+}
+
+.card div section article:nth-child(1) h1 {
+  font-size: 2.5em;
+  margin: 1em 0;
+}
+
+.card div section article:nth-child(1) h2 {
+  font-size: 1.2rem;
+  margin: 1em 0;
+}
+
+.card div section article:nth-child(2) img {
+  height: 80%;
+  width: auto;
+}
+.card div section article p {
+  margin-top: 1em;
+}
+
+@media screen and (max-width: 600px) {
+  .card div {
+    width: 90vw;
+  }
+  .card div img {
+    max-width: 100%;
+    height: auto;
+  }
+}
